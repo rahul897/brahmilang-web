@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #121121;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+
+.playground-editor{
+	position: relative;
+}
+
+.editor-container {
+	height: 60vh;
+	overflow: auto;
+	tab-size: 4ch;
+	color: #fff;
+	background-color: #333;
+}
+
+.editorLineNumber {
+	position: absolute;
+	left: 0px;
+	color: #8a8a8a;
+	text-align: right;
+	width: 40px;
+}
+
+.editor {
+	counter-reset: line;
+}
+
+.editor pre{
+	padding-left: 3rem !important;
+	height: 100%
+}
+
+.codeArea {
+	overflow-wrap: normal !important;
+	word-break: keep-all !important;
+	outline: none;
+	padding-top: 1rem;
+	padding-left: 3rem !important;
+	/* z-index: 999999999; */
+	white-space: nowrap;
+}
+
+.terminal {
+  overflow-y: scroll;
+  transition-property: max-height, padding; 
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+  height:auto;
+  max-height: 30rem;
+	padding: 2rem;
+	opacity: 1;
+}
+
+.terminal .output{
+	opacity: 1;
+	transition: opacity 0.5s;
+	transition-delay: 0.3s;
+}
+
+.terminal-collapsed {
+  max-height:0;
+	padding:0;
+	transition-property: max-height, padding; 
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
