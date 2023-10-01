@@ -25,7 +25,8 @@ function Title() {
         <div className="flex justify-center items-center">
           <div>
             <p className="text-center text-7xl tracking-tight text-green-300 font-sans">brahmiLang</p><br/>
-            <p className="text-center text-base text-gray-300">A toy programming language written in Python</p>
+            <p className="text-center text-base text-gray-300">Bramhilang is dynamically typed toy programming language, based on 
+        famous memes of Meme Legend Brahmanandam, written in Python.</p>
             <div className="mt-5 sm:mt-8 sm:flex justify-center">
               <div className="rounded-md shadow">
                 <a

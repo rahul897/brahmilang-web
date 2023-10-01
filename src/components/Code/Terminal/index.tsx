@@ -35,7 +35,7 @@ const Terminal = (props: Props) => {
             key={i}
             className={`${line.isError ? "text-red-500" : ""} output opacity-0`}
           >
-            &gt; {line.value}
+            {line.value}
           </div>
         );
       })}

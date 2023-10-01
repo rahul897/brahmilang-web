@@ -66,16 +66,22 @@ const Code = () => {
         isExecusionSuccess = false;
       }
       if (stdout.trim().length>0) {
-        console.log("current stdout is :", stdout,";");
+        // console.log("current stdout is :", stdout,";");
         const outputList = [];
-        for(const op of outputLines.slice(0,-2)){
+        for(const op of outputLines.slice(0)){
           outputList.push({ value: op, isError: false });
         }
-        if(!isExecusionSuccess){
-          outputList.push({ value: error, isError: true });
+        if(isExecusionSuccess){
+          outputList.pop();outputList.pop();  
+        } else {
+          const errorLines = error.split('\n');
+          // console.log(errorLines);
+          for(const op of errorLines.slice(0,-2)){
+            outputList.push({ value: op.replace(/ /g, "\u00A0"), isError: true });
+          }
         }
         setOutput(outputList);
-        console.log(isExecusionSuccess);
+        // console.log(isExecusionSuccess);
         setIsSuccess(isExecusionSuccess);
       }
     }
@@ -95,7 +101,7 @@ const Code = () => {
   const executeCode = () => {
 
     const cod = prev.trimEnd()+"\n\nprint(run_code('''"+code+"'''))";
-    console.log(cod.slice(-100));
+    // console.log(cod.slice(-100));
     runPython(cod);
 
   };
